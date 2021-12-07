@@ -72,11 +72,13 @@ This package helps to build rSQL queries programmatically.
     .end()
     .and()
     .manufacturer().in("Ford", "GMC")
+    .and()
+    .color().eq(Color.WHITE)
     .build();
 
     final String ecoded = query.encode();
 
-Results in follow string `(type==TRUCK,type==SUV);manufacturer=in=(Ford,GMC)`
+Results in following string `(type==TRUCK,type==SUV);manufacturer=in=(Ford,GMC);color==WHITE`
 
 
 For more examples, see tests in QBuilderTest class. 
